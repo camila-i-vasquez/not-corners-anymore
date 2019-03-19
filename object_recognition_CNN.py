@@ -1,5 +1,3 @@
-from data_exploration import dataProcessing
+import numpy as np
 
-file_nme = 'nyu_depth_data_labeled.mat'
 
-dataProcessing(file_name)
