@@ -14,7 +14,6 @@ def dataProcessing(filename):
    my_dict['labels']=['height', 'width', 'N']
    my_dict['names']=['names']
    my_dict['rawDepths']=['height','width', 'N']
-   dframe_names =['accelData', 'depths','images', 'labels', 'names', 'namesToIds','rawDepths', 'scenes']
    accelData=f['accelData'][()]
    depths = f['depths'][()]
    images = f['images'][()]
@@ -31,5 +30,14 @@ def dataProcessing(filename):
    np.save('rawDepths', rawDepths)
 
 dataProcessing(file_name)
-
+def loadingData():
+   accelData = np.load('accelData.npy')
+   depths = np.load('depths.npy')
+   images = np.load('images.npy')
+   labels =np.load('labels.npy')
+   names = np.load('names.npy')
+   rawDepths = np.load('rawDepths.npy')
+   return accelData,depths,images,labels,names, rawDepths
+   #accelData,depths,images,labels,names, rawDepths =loadingData() makes all these arrays available to you in that file
+   #it takes hella time but... 
 
