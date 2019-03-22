@@ -226,5 +226,5 @@ names_df['name']=names_df['name']\
     .str.replace('wodden', 'wooden')\
     .str.replace('xhair', 'chair')\
     .str.replace('yable', 'table')
-   np.save('names', names_df)
+np.save('names', names_df)
 
