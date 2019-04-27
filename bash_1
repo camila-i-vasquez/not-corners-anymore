@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+# this script should take the images from vid2ims, run them through monodepth_simple.py,
+# then save them to the processsed_images directory
+
+for im_x in `ls ./vid2ims/*jpg` #  | head -n 3`
+do
+  echo "processing ${im_x}"
+  python ./monodepth_simple.py --image_path \
+      ${im_x} \
+      --checkpoint_path ~/Desktop/try2/monodepth_1/model_files_cs/model_cityscapes
+done
+
+mv ./vid2ims/*_disp.png ./processed_images/
